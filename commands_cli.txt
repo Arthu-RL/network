@@ -1,0 +1,31 @@
+user mode: >
+root mode#: enable
+global mode: conf t
+leave mode: exit
+acessar porta: int/interface port (fa 0/4)
+
+root:
+	show vlan
+	mode create vlan: vlan database
+	create vlan: vlan 10 name info
+
+change the port to vlans:
+	conf t
+	init port (fa 0/1)
+	switchport access vlan PortNumber (port number/id)
+	show vlan (in root mode)
+	
+add ip:
+	enter in port first (conf t and use -> int port (fa 0/1))
+	ip add IP (192.168.10.1 255.255.255.0)
+	
+ip routing [sem informação]
+?
+ip dhcp excluded-address [ip: 192.168.10.1] [ip: 192.168.10.50] {global config mode}
+ip dhcp pool [rede-nome] {config mode}
+network [end-rede]  [mask] {pool mode}
+dns-server [ex: 8.8.8.8] {pool mode}
+default-router [ip: 192.168.10.1] {pool mode}
+show running-config {root mode}
+
+to test use ICMP on simulation mode in packet tracer
